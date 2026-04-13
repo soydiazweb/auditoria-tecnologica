@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Auditorías Digitales GT - Master 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+<script src="assets/js/tailwind-config.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/styles.css"/>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="bg-background-light text-slate-800 selection:bg-primary/20 selection:text-primary">
+<header class="fixed top-0 w-full z-[100] bg-white/70 backdrop-blur-3xl border-b border-primary/10">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-7 lg:px-12">
+    <div class="flex justify-between items-center h-20 gap-4">
+      <div class="flex-shrink-0 flex items-center gap-3">
+        <img src="assets/img/logo.png" style="width: 120px;" alt="Logo"/>
+      </div>
+      <nav class="hidden lg:flex items-center space-x-10">
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#hero">Inicio</a>
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#analyzer">Analizador web</a>
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#about">Nosotros</a>
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#method">Metodología</a>
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#services">Servicios</a>
+        <a class="text-[10px] font-bold tracking-[0.15em] text-slate-500 hover:text-primary transition-colors uppercase" href="#cases">Casos</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex liquid-button bg-primary text-white px-7 py-2.5 rounded-full font-bold text-xs transition-all tracking-tight hover:scale-[1.02]" href="#contacto">
+          CONTRATAR
+        </a>
+        <button id="mobileMenuBtn" class="lg:hidden w-11 h-11 rounded-full border border-primary/15 bg-white/70 text-primary flex items-center justify-center" aria-label="Abrir menú">
+          <span class="material-symbols-outlined">apps</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden flex-col pb-5 pt-1">
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#hero">Inicio</a>
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#analyzer">Analizador web</a>
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#about">Nosotros</a>
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#method">Metodología</a>
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#services">Servicios</a>
+      <a class="py-2 border-primary/10 text-sm font-semibold text-slate-700" href="#cases">Casos</a>
+    </div>
+  </div>
+</header>
+
+<section class="relative min-h-screen flex items-center pt-28 overflow-hidden section-soft" id="hero">
+  <div class="hero-video-wrap pointer-events-none">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/video/hero-audit-loop.mp4" type="video/mp4"/>
+    </video>
+    <div class="hero-video-tint"></div>
+  </div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(136,19,134,0.10)_0%,rgba(252,248,252,0.72)_58%,rgba(248,238,248,0.88)_100%)] pointer-events-none"></div>
+  <div class="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 text-center z-10">
+    <div class="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/70 px-4 py-2 text-[11px] font-semibold text-primary shadow-soft mb-8 animate-[pulse_4s_ease-in-out_infinite]">
+      <span class="material-symbols-outlined text-base">verified</span>
+      Auditoría, optimización y crecimiento digital
+    </div>
+    <h1 class="hero-title text-5xl md:text-7xl lg:text-[7rem] font-extrabold tracking-[-0.03em] leading-[1.02] mb-8 text-slate-900">
+      Especialistas en<br/>
+      <span class="text-gradient">Auditorías Digitales</span>
+    </h1>
+    <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-slate-600 font-light leading-relaxed">
+      Revisamos tu web, detectamos qué está frenando resultados y te mostramos cómo convertirla en una plataforma más rápida, confiable y lista para vender o crecer mejor.
+    </p>
+    <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+      <a class="liquid-button px-10 py-4 rounded-full bg-primary text-white font-bold text-base transition-all hover:scale-[1.02]" href="#analyzer">
+        Analizar mi sitio
+      </a>
+      <a class="px-10 py-4 rounded-full border border-primary/15 bg-white/60 text-primary font-semibold text-base hover:bg-white/80 transition-all backdrop-blur-xl" href="#services">
+        Ver servicios
+      </a>
+    </div>
+    <div class="mt-14 flex justify-center">
+      <button id="heroScrollNext" type="button" class="hero-scroll-btn text-primary" aria-label="Ir al análisis">
+        <span class="material-symbols-outlined text-3xl font-extralight">expand_more</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-20 md:py-24 section-brand border-t border-primary/10 relative overflow-hidden" id="analyzer">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(136,19,134,0.12),transparent_70%)]"></div>
+  <div class="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+    <div class="text-center mb-10 md:mb-12">
+      <span class="text-primary font-bold tracking-[0.4em] text-[10px] uppercase block mb-4">Diagnóstico Instantáneo</span>
+      <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-5 tracking-tight">Analizador web</h2>
+      <p class="text-lg md:text-xl text-slate-600 font-light max-w-3xl mx-auto">Ingresa una URL y obtén una lectura clara de tu web. Al terminar, verás solo los puntos clave y la mejor forma en que podemos ayudarte.</p>
+    </div>
+
+    <div class="relative max-w-5xl mx-auto group">
+      <div class="absolute -inset-1 bg-gradient-to-r from-primary/20 via-fuchsia-300/20 to-primary/20 rounded-[2rem] blur-md opacity-70 group-hover:opacity-100 transition duration-1000"></div>
+      <div class="relative glass-strong rounded-[2rem] p-4 sm:p-5 md:p-6 border border-primary/15 shadow-soft">
+        <div class="flex flex-col lg:flex-row items-stretch gap-3">
+          <input id="analyzerUrl" class="flex-grow bg-white/65 border border-primary/10 text-slate-900 px-6 sm:px-8 text-base font-light focus:ring-0 focus:border-primary/30 h-14 rounded-full placeholder-slate-400" placeholder="https://tuempresa.com" type="text"/>
+          <button id="runAnalyzer" class="liquid-button bg-primary text-white px-8 sm:px-10 h-14 rounded-full font-bold text-xs hover:opacity-95 transition-colors tracking-widest uppercase whitespace-nowrap">
+            Analizar Sitio
+          </button>
+        </div>
+        <p id="analyzerHelper" class="mt-4 text-sm text-slate-500 text-left">Analizamos señales reales visibles de tu sitio para darte una lectura simple, útil y enfocada en oportunidades claras de mejora.</p>
+        <p id="analyzerError" class="hidden mt-3 text-sm text-rose-600 font-medium text-left"></p>
+
+        <div id="analyzerLoading" class="hidden rounded-3xl p-6 sm:p-8 mt-5 bg-white/55 border border-primary/10 text-center">
+          <div class="w-14 h-14 mx-auto rounded-full border-4 border-primary/15 border-t-primary animate-spin"></div>
+          <h3 class="mt-5 text-2xl font-bold text-slate-900">Analizando tu sitio…</h3>
+          <p class="mt-2 text-slate-600">Revisando la URL y preparando una lectura simple de los puntos clave del sitio, esto toma 1 minuto.</p>
+        </div>
+
+        <div id="analyzerResults" class="hidden mt-5">
+          <div class="bg-white/60 border border-primary/12 rounded-[1.75rem] p-6 sm:p-8 md:p-10">
+            <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-6 mb-8">
+              <div>
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">Resumen del análisis</div>
+                <h3 id="analyzedUrlLabel" class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Resultado para tu sitio</h3>
+                <p id="analysisSummary" class="text-slate-600 mt-2 max-w-2xl">Te mostramos una lectura clara de lo que hoy puede estar frenando visibilidad, confianza y conversiones en tu web.</p>
+              </div>
+              <div class="glass-strong rounded-3xl px-6 py-5 min-w-[220px]">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-2">Score general</div>
+                <div id="overallScore" class="text-5xl font-extrabold text-slate-900 tracking-tight">--</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mb-6">
+              <div class="glass-strong rounded-3xl p-5">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">SEO Base</div>
+                <div id="metricSeo" class="text-4xl font-bold text-slate-900 mb-4">--</div>
+                <div class="w-full bg-primary/8 rounded-full h-2 overflow-hidden"><div id="barSeo" class="h-full rounded-full w-0 transition-all duration-700"></div></div>
+              </div>
+              <div class="glass-strong rounded-3xl p-5">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">Accesibilidad</div>
+                <div id="metricAccessibility" class="text-4xl font-bold text-slate-900 mb-4">--</div>
+                <div class="w-full bg-primary/8 rounded-full h-2 overflow-hidden"><div id="barAccessibility" class="h-full rounded-full w-0 transition-all duration-700"></div></div>
+              </div>
+              <div class="glass-strong rounded-3xl p-5">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">Estructura</div>
+                <div id="metricStructure" class="text-4xl font-bold text-slate-900 mb-4">--</div>
+                <div class="w-full bg-primary/8 rounded-full h-2 overflow-hidden"><div id="barStructure" class="h-full rounded-full w-0 transition-all duration-700"></div></div>
+              </div>
+              <div class="glass-strong rounded-3xl p-5">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">Técnico</div>
+                <div id="metricTechnical" class="text-4xl font-bold text-slate-900 mb-4">--</div>
+                <div class="w-full bg-primary/8 rounded-full h-2 overflow-hidden"><div id="barTechnical" class="h-full rounded-full w-0 transition-all duration-700"></div></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+              <div class="glass-strong rounded-3xl p-6">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Hallazgos detectados</div>
+                <ul id="analysisFindings" class="space-y-3 text-sm text-slate-700"></ul>
+              </div>
+              <div class="glass-strong rounded-3xl p-6">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Impacto y cómo ayudarte</div>
+                <div id="analysisDetails" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700"></div>
+              </div>
+            </div>
+
+            <div class="glass-strong rounded-3xl p-6 sm:p-8">
+              <div class="w-full text-center md:text-left">
+                <div class="text-[10px] font-bold text-primary/70 uppercase tracking-[0.3em] mb-3">Siguiente paso recomendado</div>
+                <h4 class="text-2xl font-extrabold text-slate-900 tracking-tight">Te mostramos el impacto del resultado y el servicio ideal para mejorar tu web</h4>
+                <p class="text-slate-600 mt-2 max-w-4xl">Tomamos este análisis y lo convertimos en acciones concretas para que tu sitio genere mejor experiencia, más confianza y más oportunidades de negocio.</p>
+                <a id="analyzerCta" href="#services" class="liquid-button mt-6 inline-flex w-full items-center justify-center px-8 py-4 rounded-full bg-primary text-white font-bold text-sm tracking-wide">
+                  Ver servicios recomendados
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 md:py-32 bg-white transition-colors duration-500 overflow-hidden" id="about">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="relative group order-2 lg:order-1">
+        <div class="absolute -inset-4 bg-gradient-to-r from-primary/10 to-fuchsia-400/10 rounded-4xl blur-2xl opacity-70 transition duration-1000"></div>
+        <div class="relative aspect-[4/5] md:aspect-square w-full rounded-3xl overflow-hidden shadow-2xl image-overlay-humanist border border-primary/10">
+          <img alt="Tecnología avanzada" class="w-full h-full object-cover grayscale brightness-95 group-hover:grayscale-0 transition duration-1000" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRAl2Mfjp6d05rYhafjDnau3EGdXhWfNp9cwpzbbKohZGXd6cuYvEHdrlYfSd4JV15n9MuQmFpIIsYN_78K42fEqMXLUIeenf4nMn7U8YPlCelTNd2O-C98BA55lBMdIKyVIqDZaf4Er7Em28jbYP5c0TCN44A2p02aCXZJ_Hd8UEdfsfTucdfSM6VYvWJ8UNaor6UQj8KG1mlCpVRq65wfDv9Unreks7m9hf18eaZ4UUDPbsujK3yTydEztJxAXx0tnE4B8EqquzV"/>
+        </div>
+      </div>
+      <div class="space-y-8 order-1 lg:order-2">
+        <span class="text-primary font-bold tracking-[0.3em] text-[10px] uppercase block">El Estándar Elite</span>
+        <h2 class="text-4xl md:text-6xl lg:text-[5rem] font-extrabold text-slate-900 leading-[1.05] tracking-tight">
+          No somos una <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">agencia.</span>
+        </h2>
+        <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-light max-w-xl">
+          Somos una boutique de ingeniería. <strong class="text-slate-900 font-semibold">Auditorías Digitales GT</strong> nació para diseccionar sistemas web donde otros solo ven código.
+        </p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 md:py-32 section-brand relative overflow-hidden" id="method">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(136,19,134,0.10),transparent_56%)]"></div>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+    <div class="text-center mb-16 md:mb-24">
+      <h2 class="text-4xl md:text-[5rem] font-extrabold text-slate-900 mb-5 tracking-tight leading-none">El Método.</h2>
+      <p class="text-lg md:text-xl text-slate-600 font-light max-w-2xl mx-auto">Arquitectura de alto rendimiento en tres movimientos estratégicos.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <div class="apple-glass iridescent-reflection rounded-3xl p-8 md:p-10 transition-all duration-500 group reveal-up">
+        <div class="w-12 h-12 mb-8 solid-icon-box rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl font-light">manage_search</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Diagnóstico Claro</h3>
+        <p class="text-slate-600 leading-relaxed text-base font-light">
+          Revisamos tu web para detectar qué está afectando velocidad, confianza, visibilidad y resultados comerciales.
+        </p>
+      </div>
+      <div class="glass-strong iridescent-reflection rounded-3xl p-8 md:p-10 transition-all duration-500 group reveal-up border-primary/20">
+        <div class="w-12 h-12 mb-8 solid-icon-box rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl font-light">architecture</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Plan de Mejora</h3>
+        <p class="text-slate-700 leading-relaxed text-base font-light">
+          Priorizamos lo importante y te mostramos por dónde empezar para lograr avances visibles sin perder tiempo.
+        </p>
+      </div>
+      <div class="apple-glass iridescent-reflection rounded-3xl p-8 md:p-10 transition-all duration-500 group reveal-up">
+        <div class="w-12 h-12 mb-8 solid-icon-box rounded-xl flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl font-light">rocket_launch</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Implementación y Escala</h3>
+        <p class="text-slate-600 leading-relaxed text-base font-light">
+          Te ayudamos a ejecutar los cambios para que la web funcione mejor hoy y quede preparada para crecer mañana.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 md:py-32 bg-background-light transition-colors duration-500" id="services">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="mb-16 md:mb-20 text-center md:text-left">
+      <span class="text-primary font-bold tracking-[0.4em] text-[10px] uppercase mb-4 block">Servicios Premium</span>
+      <h2 class="text-4xl md:text-6xl lg:text-[5rem] font-extrabold text-slate-900 tracking-tight leading-[1.05]">Servicios pensados para<br/>mejorar resultados reales</h2>
+      <p class="mt-5 text-lg text-slate-600 max-w-3xl">Puedes contratar una mejora puntual o una ruta completa. Estos servicios funcionan muy bien cuando el análisis detecta problemas de velocidad, confianza, SEO, estructura o conversión.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+      <div class="bg-white rounded-3xl p-8 md:p-10 h-full flex flex-col group reveal-up border border-primary/10 shadow-soft">
+        <div class="bg-primary/8 w-14 h-14 rounded-xl flex items-center justify-center mb-8 text-primary border border-primary/10">
+          <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Optimización para tiendas online</h3>
+        <p class="text-slate-600 text-base mb-8 leading-relaxed font-light">
+          Ideal cuando tu tienda recibe visitas pero no vende lo que debería. Mejoramos confianza, experiencia de compra y velocidad en puntos clave del recorrido.
+        </p>
+        <ul class="space-y-4 mb-10 flex-grow">
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Mejor experiencia de compra</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Menos fricción en checkout</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Más confianza para convertir</li>
+        </ul>
+        <button class="liquid-button service-button-black w-full py-3.5 rounded-2xl font-bold text-xs tracking-wide uppercase transition-all">
+          Mejorar mi ecommerce
+        </button>
+      </div>
+      <div class="bg-white rounded-3xl p-8 md:p-10 flex flex-col relative md:-translate-y-6 border border-primary/20 shadow-glow reveal-up">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
+          <span class="px-4 py-2 rounded-full bg-primary text-white text-[10px] font-bold tracking-[0.25em] uppercase shadow-lg">Más solicitado</span>
+        </div>
+        <div class="bg-primary/8 w-14 h-14 rounded-xl flex items-center justify-center mb-8 text-primary border border-primary/10 mt-3">
+          <span class="material-symbols-outlined text-2xl">dns</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Auditoría para Sistemas Web</h3>
+        <p class="text-slate-600 text-base mb-8 leading-relaxed font-light">
+          Pensado para plataformas, portales o sistemas internos que necesitan operar con más estabilidad, rapidez y claridad para el equipo.
+        </p>
+        <ul class="space-y-4 mb-10 flex-grow">
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Menos riesgo operativo</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Mejor rendimiento general</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Ruta clara de mejoras</li>
+        </ul>
+        <button class="liquid-button service-button-black w-full py-3.5 rounded-2xl font-bold text-xs tracking-wide uppercase transition-all">
+          Auditar mi sistema
+        </button>
+      </div>
+      <div class="bg-white rounded-3xl p-8 md:p-10 h-full flex flex-col group reveal-up border border-primary/10 shadow-soft">
+        <div class="bg-primary/8 w-14 h-14 rounded-xl flex items-center justify-center mb-8 text-primary border border-primary/10">
+          <span class="material-symbols-outlined text-2xl">web</span>
+        </div>
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 tracking-tight">Landing y web comercial</h3>
+        <p class="text-slate-600 text-base mb-8 leading-relaxed font-light">
+          Para sitios que necesitan comunicar mejor, cargar más rápido y convertir más visitas en contactos, formularios o reuniones.
+        </p>
+        <ul class="space-y-4 mb-10 flex-grow">
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Mejor mensaje comercial</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Más claridad visual</li>
+          <li class="flex items-center text-sm font-medium text-slate-700"><span class="material-symbols-outlined text-primary mr-3 text-lg">check_circle</span> Más oportunidades de contacto</li>
+        </ul>
+        <button class="liquid-button service-button-black w-full py-3.5 rounded-2xl font-bold text-xs tracking-wide uppercase transition-all">
+          Optimizar mi landing
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 md:py-32 section-brand relative overflow-hidden" id="cases">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(136,19,134,0.10),transparent_56%)]"></div>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+    <div class="mb-14 text-center">
+      <span class="text-primary font-bold tracking-[0.4em] text-[10px] uppercase mb-4 block">Casos de Éxito</span>
+      <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">Resultados por tipo de proyecto</h2>
+      <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Explora nuestros éxitos en ecommerce, sistemas y landings. Cada grupo muestra casos distintos y muestra los resultados obtenidos.</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="cases-tab px-6 py-3 rounded-full bg-white/75 border border-primary/10 text-slate-700 font-semibold" data-case-filter="all">Todos</button>
+      <button class="cases-tab px-6 py-3 rounded-full bg-white/75 border border-primary/10 text-slate-700 font-semibold is-active" data-case-filter="ecommerce">Ecommerce</button>
+      <button class="cases-tab px-6 py-3 rounded-full bg-white/75 border border-primary/10 text-slate-700 font-semibold" data-case-filter="sistemas">Sistemas</button>
+      <button class="cases-tab px-6 py-3 rounded-full bg-white/75 border border-primary/10 text-slate-700 font-semibold" data-case-filter="landing">Landing</button>
+    </div>
+
+    <div id="casesGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="ecommerce">
+        <div class="h-56 overflow-hidden"><img alt="Caso ecommerce moda" class="w-full h-full object-cover" src="assets/img/pequeayuda.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Tienda online</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Tienda de artículos de bebes</h3><p class="text-slate-600 mb-6">La auditoría detectó demasiada fricción al comprar desde móvil. Simplificamos el recorrido y mejoramos la confianza visual, se optimizo carga rapida para el alto volumen de visitas.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Conversión</span><strong class="text-slate-900 text-xl">+22%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Abandono</span><strong class="text-slate-900 text-xl">-18%</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="ecommerce">
+        <div class="h-56 overflow-hidden"><img alt="Caso ecommerce catálogo" class="w-full h-full object-cover" src="assets/img/dslabs.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Tienda online</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Catálogo con mejor velocidad comercial y seo</h3><p class="text-slate-600 mb-6">Se reorganizaron imágenes y bloques pesados para que el sitio cargara mejor y el producto se entendiera más rápido, se configura el seo para un mejor resultado en buscadores.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Carga</span><strong class="text-slate-900 text-xl">-34%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Tiempo en sitio</span><strong class="text-slate-900 text-xl">+19%</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="ecommerce">
+        <div class="h-56 overflow-hidden"><img alt="Caso ecommerce suscripción" class="w-full h-full object-cover" src="assets/img/megaderma.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Tienda online</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Marca DTC con más confianza para vender</h3><p class="text-slate-600 mb-6">El diagnóstico mostró falta de señales de confianza. Reforzamos mensajes, pruebas sociales y jerarquía de compra.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Ventas</span><strong class="text-slate-900 text-xl">+17%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Confianza</span><strong class="text-slate-900 text-xl">Alta</strong></div></div></div>
+      </article>
+
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="sistemas">
+        <div class="h-56 overflow-hidden"><img alt="Caso sistemas portal interno" class="w-full h-full object-cover" src="assets/img/fullcom.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Sistemas</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Portal interno más estable para operar</h3><p class="text-slate-600 mb-6">Se detectaron recursos innecesarios y una estructura que complicaba el uso diario. Priorizamos mejoras para más estabilidad.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Incidencias</span><strong class="text-slate-900 text-xl">-29%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Fluidez</span><strong class="text-slate-900 text-xl">+24%</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="sistemas">
+        <div class="h-56 overflow-hidden"><img alt="Caso sistemas dashboard" class="w-full h-full object-cover" src="assets/img/rowe.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Sistemas</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Dashboard más claro para decisiones rápidas</h3><p class="text-slate-600 mb-6">La auditoría reveló pantallas saturadas y navegación poco intuitiva. Se rediseñó el flujo para entender mejor la información.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Uso efectivo</span><strong class="text-slate-900 text-xl">+26%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Errores</span><strong class="text-slate-900 text-xl">-21%</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="sistemas">
+        <div class="h-56 overflow-hidden"><img alt="Caso sistemas soporte" class="w-full h-full object-cover" src="assets/img/volante.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Sistemas</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Plataforma de soporte con mejor respuesta</h3><p class="text-slate-600 mb-6">Ordenamos prioridades técnicas y puntos de fricción para que el sistema se sintiera más confiable y ágil en horas críticas.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Tiempo de respuesta</span><strong class="text-slate-900 text-xl">-32%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Disponibilidad</span><strong class="text-slate-900 text-xl">Mayor</strong></div></div></div>
+      </article>
+
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="landing">
+        <div class="h-56 overflow-hidden"><img alt="Caso landing B2B" class="w-full h-full object-cover" src="assets/img/umbrella.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Landing</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Landing B2B con propuesta más clara</h3><p class="text-slate-600 mb-6">Se ajustó el mensaje principal y el orden de las secciones para que la propuesta se entendiera en segundos.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Leads</span><strong class="text-slate-900 text-xl">+31%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Rebote</span><strong class="text-slate-900 text-xl">-23%</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="landing">
+        <div class="h-56 overflow-hidden"><img alt="Caso landing campaña" class="w-full h-full object-cover" src="assets/img/omegababy.png"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Landing</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Campaña con CTA más visible y directo</h3><p class="text-slate-600 mb-6">El análisis mostró demasiadas distracciones. Simplificamos el recorrido para llevar al usuario a la acción principal.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">CTR</span><strong class="text-slate-900 text-xl">+27%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Atención</span><strong class="text-slate-900 text-xl">Más alta</strong></div></div></div>
+      </article>
+      <article class="case-card tilt-card bg-white rounded-3xl overflow-hidden shadow-soft border border-primary/10" data-case-category="landing">
+        <div class="h-56 overflow-hidden"><img alt="Caso landing servicios" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"></div>
+        <div class="p-8"><span class="inline-block text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-4">Landing</span><h3 class="text-2xl font-bold text-slate-900 mb-3">Landing de servicios con más contactos útiles</h3><p class="text-slate-600 mb-6">Reordenamos credibilidad, beneficios y contacto para que la página se sintiera más sólida y comercial.</p><div class="grid grid-cols-2 gap-4"><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Consultas</span><strong class="text-slate-900 text-xl">+24%</strong></div><div class="rounded-2xl bg-primary/5 p-4"><span class="text-[10px] uppercase tracking-[0.2em] text-primary font-bold block mb-1">Claridad</span><strong class="text-slate-900 text-xl">Mayor</strong></div></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 md:py-32 section-soft relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(136,19,134,0.10),transparent_60%)]"></div>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 text-center mb-8 md:mb-10 tracking-tight leading-none">Lo que dicen nuestros clientes</h2>
+    <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">Testimonios de proyectos enfocados en sistemas, ecommerce WordPress, ecommerce Drupal, automatización y landings comerciales.</p>
+    <div class="relative">
+      <button id="testimonialPrev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass-strong items-center justify-center text-primary border border-primary/10" aria-label="Anterior">
+        <span class="material-symbols-outlined">west</span>
+      </button>
+      <div class="testimonial-viewport px-0 md:px-16 overflow-hidden">
+        <div id="testimonialTrack" class="testimonial-track">
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente sistemas" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Marco A.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Sistemas corporativos</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“Teníamos un portal pesado y poco claro. Después de la auditoría supimos exactamente qué corregir primero y el equipo ganó mucha tranquilidad.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Más estabilidad operativa</div></article></div>
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente ecommerce wordpress" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Lucía P.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Tienda online en WordPress</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“La tienda tenía visitas, pero no respondía como esperábamos. Con los cambios priorizados mejoró la experiencia y las ventas empezaron a moverse.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Más conversión y confianza</div></article></div>
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente ecommerce drupal" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Jorge T.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Tienda online en Drupal</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“Nos ayudaron a ver dónde estaba la fricción real en la compra. Lo mejor fue que todo se explicó de forma clara y enfocada al negocio.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Compra más fluida</div></article></div>
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente automatización" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Mariana F.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Automatización</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“Encontramos tareas repetitivas y puntos que estaban quitándole tiempo al equipo. La propuesta fue directa y muy fácil de priorizar.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Más eficiencia del equipo</div></article></div>
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente landing" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Daniela R.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Landing comercial</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“La página se veía bien, pero no convertía. Ajustamos mensaje, orden y CTA, y la diferencia se notó muy rápido.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Más leads calificados</div></article></div>
+          <div class="testimonial-slide"><article class="testimonial-card bg-white rounded-3xl p-8 md:p-10 h-full border border-primary/10 shadow-soft"><div class="flex items-center gap-4 mb-6"><img alt="Cliente soporte web" class="rounded-full border border-primary/10 p-0.5" src="https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=200&q=80"><div><h4 class="text-slate-900 font-bold text-base tracking-tight">Andrés V.</h4><span class="text-[10px] text-primary font-black tracking-[0.1em] uppercase">Sitio empresarial</span></div></div><p class="text-slate-700 italic mb-8 text-base leading-relaxed font-light">“Lo valioso fue entender el impacto del problema en algo simple: confianza, velocidad y oportunidades perdidas. Eso nos ayudó a movernos rápido.”</p><div class="pt-6 border-t border-primary/10 text-emerald-600 text-[10px] font-bold tracking-widest uppercase">Más claridad comercial</div></article></div>
+        </div>
+      </div>
+      <button id="testimonialNext" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass-strong items-center justify-center text-primary border border-primary/10" aria-label="Siguiente">
+        <span class="material-symbols-outlined">east</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="py-20 md:py-24 bg-white border-t border-primary/10">
+  <div class="max-w-[1100px] mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="glass-strong rounded-[2rem] p-8 md:p-12 text-center">
+      <span class="text-primary font-bold tracking-[0.35em] text-[10px] uppercase block mb-4">Hablemos</span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">Convierte tu web en una ventaja competitiva</h2>
+      <p class="mt-5 max-w-2xl mx-auto text-slate-600 text-base md:text-lg">Si el análisis mostró oportunidades, podemos ayudarte a priorizarlas y transformarlas en mejoras reales para tu negocio.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:estrategias@auditoriasdigitalesgt.com" class="liquid-button px-8 py-4 rounded-full bg-primary text-white font-bold">Escríbenos</a>
+        <a href="#services" class="px-8 py-4 rounded-full border border-primary/15 bg-white text-primary font-semibold">Ver servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-16 bg-background-dark text-white relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <a class="apple-glass rounded-3xl px-6 sm:px-10 py-6 sm:py-8 flex items-center gap-5 group hover:bg-white/10 transition-colors" href="mailto:estrategias@auditoriasdigitalesgt.com">
+        <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white/70 group-hover:text-white transition-colors"><span class="material-symbols-outlined text-2xl font-light">mail</span></div>
+        <span class="text-white text-base sm:text-xl font-light tracking-tight break-all">estrategias@auditoriasdigitalesgt.com</span>
+      </a>
+      <a class="apple-glass rounded-3xl px-6 sm:px-10 py-6 sm:py-8 flex items-center gap-5 group hover:bg-white/10 transition-colors" href="tel:+50240072356">
+        <div class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white/70 group-hover:text-white transition-colors"><span class="material-symbols-outlined text-2xl font-light">call</span></div>
+        <span class="text-white text-base sm:text-xl font-light tracking-tight">+(502) 4007-2356</span>
+      </a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mb-12 md:mb-20 border-b border-white/10 pb-10 md:pb-16">
+      <a class="text-white/55 hover:text-white text-[10px] font-bold transition-colors uppercase tracking-[0.2em]" href="#services">Servicios</a>
+      <a class="text-white/55 hover:text-white text-[10px] font-bold transition-colors uppercase tracking-[0.2em]" href="#method">Metodología</a>
+      <a class="text-white/55 hover:text-white text-[10px] font-bold transition-colors uppercase tracking-[0.2em]" href="#cases">Casos de Éxito</a>
+      <a class="text-white/55 hover:text-white text-[10px] font-bold transition-colors uppercase tracking-[0.2em]" href="#contacto">Contacto</a>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-between items-center text-[10px] text-white/45 uppercase tracking-widest font-bold gap-8">
+      <p class="text-center lg:text-left">© 2026 Auditorías Digitales GT</p>
+      <div class="flex items-center gap-3">
+        <a class="social-icon" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M6.94 8.5H3.56V20h3.38zM5.25 3A2.01 2.01 0 1 0 5.3 7.02 2.01 2.01 0 0 0 5.25 3zM20.44 13.18c0-3.6-1.92-5.27-4.48-5.27-2.06 0-2.98 1.13-3.5 1.92V8.5H9.08c.04.88 0 11.5 0 11.5h3.38v-6.42c0-.34.03-.68.13-.92.27-.68.88-1.39 1.91-1.39 1.35 0 1.89 1.03 1.89 2.54V20h3.38z"/></svg></a>
+        <a class="social-icon" href="#" aria-label="Twitter X"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.41L6.46 22H3.35l7.24-8.27L.8 2h6.4l4.42 5.84zm-1.09 18h1.73L6.26 3.9H4.4z"/></svg></a>
+        <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2zm10.25 1.65a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1M12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5m0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2"/></svg></a>
+      </div>
+      <div class="flex space-x-6 sm:space-x-8">
+        <button class="hover:text-white transition-colors" data-open-modal="privacyModal">Privacidad</button>
+        <button class="hover:text-white transition-colors" data-open-modal="termsModal">Términos</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/+50240072356" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 z-[120] w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center floating-pill wa-attention transition-transform shadow-xl" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" class="w-7 h-7 fill-current" aria-hidden="true"><path d="M19.11 17.41c-.29-.14-1.71-.84-1.98-.94-.26-.1-.46-.14-.65.15s-.75.94-.92 1.13c-.17.19-.34.21-.63.07-.29-.14-1.22-.45-2.33-1.44-.86-.77-1.45-1.73-1.62-2.02-.17-.29-.02-.44.13-.58.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.23-.55-.47-.47-.65-.48h-.55c-.19 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.64 1.11 2.83c.14.19 1.92 2.93 4.65 4.1.65.28 1.16.45 1.56.58.66.21 1.27.18 1.75.11.53-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.33Z"/><path d="M27.27 4.69A15.83 15.83 0 0 0 16.02 0C7.24 0 .09 7.15.09 15.94c0 2.81.73 5.56 2.12 7.98L0 32l8.29-2.17a15.84 15.84 0 0 0 7.72 1.98h.01c8.78 0 15.93-7.15 15.93-15.94 0-4.26-1.66-8.26-4.68-11.18ZM16.02 29.1h-.01a13.1 13.1 0 0 1-6.67-1.82l-.48-.28-4.92 1.29 1.31-4.8-.31-.49A13.07 13.07 0 0 1 2.91 15.94C2.91 8.67 8.79 2.8 16.03 2.8c3.5 0 6.79 1.36 9.26 3.83a12.98 12.98 0 0 1 3.84 9.31c0 7.24-5.89 13.16-13.11 13.16Z"/></svg>
+</a>
+
+<button id="backToTop" class="fixed bottom-6 right-6 z-[120] w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center floating-pill opacity-0 pointer-events-none transition-all duration-300 hover:scale-105" aria-label="Volver arriba">
+  <span class="material-symbols-outlined">north</span>
+</button>
+
+
+<div id="privacyModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4 modal-shell">
+  <div class="bg-white max-w-3xl w-full rounded-3xl shadow-2xl border border-primary/10 overflow-hidden">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-primary/10"><h3 class="text-2xl font-extrabold text-slate-900">Política de Privacidad</h3><button class="w-10 h-10 rounded-full bg-primary/6 text-slate-700" data-close-modal="privacyModal">✕</button></div>
+    <div class="p-6 md:p-8 text-slate-600 space-y-4 max-h-[70vh] overflow-y-auto"><p>En Auditorias Digitales, valoramos y respetamos la privacidad de nuestros usuarios. La presente Política de Privacidad tiene como finalidad informar de manera clara cómo recopilamos, utilizamos, almacenamos y protegemos la información personal que nos proporcionas a través de nuestro sitio web, formularios de contacto, canales digitales y demás medios relacionados con nuestros servicios.</p>
+    <p>Recopilamos información que el usuario comparte de forma voluntaria, como nombre, correo electrónico, número de teléfono, nombre de empresa, sitio web y cualquier otro dato enviado a través de formularios o solicitudes de contacto. También podemos recopilar información técnica de navegación, como dirección IP, tipo de navegador, dispositivo, páginas visitadas, tiempo de permanencia y comportamiento general dentro del sitio, con el objetivo de mejorar la experiencia del usuario y optimizar nuestros servicios.</p>
+    <p>La información recopilada se utiliza para atender solicitudes, brindar información comercial, elaborar propuestas, mejorar nuestros servicios, dar seguimiento a consultas, realizar análisis estadísticos y, cuando corresponda, enviar comunicaciones relacionadas con nuestros productos o servicios. No vendemos ni alquilamos los datos personales de nuestros usuarios a terceros.</p>
+    <p>Podremos compartir cierta información con proveedores o aliados tecnológicos que colaboren en la operación del sitio web, en herramientas de análisis, automatización, alojamiento, mensajería o soporte, siempre bajo condiciones adecuadas de confidencialidad y seguridad. Asimismo, podremos revelar información cuando sea necesario para cumplir con obligaciones legales o requerimientos de autoridad competente.</p>
+    <p>Adoptamos medidas razonables de seguridad para proteger la información personal contra accesos no autorizados, pérdida, alteración o divulgación indebida. Sin embargo, ningún sistema de transmisión o almacenamiento de datos es completamente infalible, por lo que no podemos garantizar una seguridad absoluta.</p>
+    <p>Nuestro sitio puede utilizar cookies y tecnologías similares para recordar preferencias, medir el rendimiento del sitio, analizar el comportamiento de navegación y ofrecer una mejor experiencia. El usuario puede gestionar el uso de cookies desde la configuración de su navegador o desde las opciones disponibles en el sitio, cuando corresponda.</p>
+    <p>El usuario podrá solicitar en cualquier momento el acceso, actualización, corrección o eliminación de sus datos personales, así como limitar ciertos usos de su información, contactándonos a través de los canales oficiales indicados en este sitio.</p>
+    <p>Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento para adaptarla a cambios legales, técnicos o comerciales. La versión vigente será siempre la publicada en este sitio web.</p>
+    </div>
+  </div>
+</div>
+<div id="termsModal" class="fixed inset-0 z-[150] hidden items-center justify-center p-4 modal-shell">
+  <div class="bg-white max-w-3xl w-full rounded-3xl shadow-2xl border border-primary/10 overflow-hidden">
+    <div class="flex items-center justify-between px-6 py-5 border-b border-primary/10"><h3 class="text-2xl font-extrabold text-slate-900">Términos y Condiciones</h3><button class="w-10 h-10 rounded-full bg-primary/6 text-slate-700" data-close-modal="termsModal">✕</button></div>
+    <div class="p-6 md:p-8 text-slate-600 space-y-4 max-h-[70vh] overflow-y-auto"><p>Bienvenido a Auditorias Digitales. Al acceder, navegar o utilizar este sitio web, el usuario acepta cumplir con los presentes Términos y Condiciones. Si no está de acuerdo con alguno de ellos, deberá abstenerse de utilizar este sitio y sus servicios relacionados.</p>
+    <p>El contenido de este sitio web tiene un propósito informativo y comercial. La información presentada sobre servicios, soluciones, procesos, beneficios, tiempos de implementación, resultados esperados u otros elementos similares puede estar sujeta a cambios sin previo aviso y no constituye una garantía contractual, salvo que exista una propuesta formal o acuerdo firmado entre las partes.</p>
+    <p>El usuario se compromete a utilizar este sitio de forma adecuada, lícita y respetuosa, evitando cualquier acción que pueda afectar su funcionamiento, seguridad, disponibilidad o reputación. Queda prohibido intentar acceder sin autorización a áreas restringidas, interferir en el sitio, utilizarlo con fines fraudulentos o introducir código malicioso.</p>
+    <p>Todos los textos, diseños, logotipos, imágenes, gráficos, iconos, estructuras, desarrollos y demás contenidos presentes en este sitio son propiedad de [Nombre de la empresa] o se utilizan con la debida autorización. Queda prohibida su reproducción, distribución, modificación, publicación o uso no autorizado sin consentimiento previo y por escrito.</p>
+    <p>Los enlaces a sitios de terceros que puedan mostrarse en esta web se proporcionan únicamente con fines informativos o de referencia. [Nombre de la empresa] no controla ni asume responsabilidad por el contenido, políticas, disponibilidad o prácticas de dichos sitios externos.</p>
+    <p>En caso de que este sitio permita formularios de contacto, solicitudes de diagnóstico, cotizaciones, auditorías o cualquier mecanismo de consulta, el envío de información por parte del usuario no implica una obligación automática de prestación de servicios por parte de [Nombre de la empresa]. Toda relación comercial estará sujeta a evaluación, disponibilidad y aceptación expresa mediante los canales correspondientes.</p>
+    <p>[Nombre de la empresa] no será responsable por daños directos o indirectos derivados del uso o imposibilidad de uso del sitio web, interrupciones del servicio, errores de contenido, decisiones tomadas con base en la información publicada o problemas ajenos a su control razonable.</p>
+    <p>Nos reservamos el derecho de modificar, actualizar, suspender o eliminar contenidos, funcionalidades, servicios y estos Términos y Condiciones en cualquier momento y sin previo aviso. El uso continuado del sitio después de cualquier modificación implicará la aceptación de los cambios realizados.</p>
+    <p>Estos Términos y Condiciones se regirán por la legislación aplicable en la jurisdicción correspondiente al domicilio de [Nombre de la empresa], salvo disposición legal en contrario.</p></div>
+<script src="assets/js/app.js"></script>
+</body></html>
